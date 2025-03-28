@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали новости</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">News</div>
+            <nav>
+                <a href="index.html">Главное</a>
+                <a href="#">Новости 24</a>
+                <a href="#">Комментарии</a>
+                <a href="#">Страны</a>
+                <a href="#">Еще</a>
+                <input type="text" placeholder="🔍 Поиск">
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="news-details">
+            <h1>Казахстан выразил Киеву обеспокоенность атаками на нефтепровод КТК</h1>
+            <span class="date">28 марта 2025</span>
+            <img src="img/90pkh2vma0eoxcxjjsb2o3egiat362qi.webp" alt="Флаг">
+            <p>Казахстан довел до сведения украинской стороны свою озабоченность</p>
+        </article>
+        
+        <section class="comments">
+            <h2>Комментарии</h2>
+            <ul id="comments-list">
+                <li>Иван: Очень интересная статья! <button onclick="editComment(this)">Редактировать</button></li>
+                <li>Мария: Спасибо за информацию! <button onclick="editComment(this)">Редактировать</button></li>
+            </ul>
+            <form id="comment-form">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <textarea id="comment" placeholder="Ваш комментарий" required></textarea>
+                <button type="submit">Оставить комментарий</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let comment = document.getElementById('comment').value;
+            if (name && comment) {
+                let newComment = document.createElement('li');
+                newComment.innerHTML = `${name}: ${comment} <button onclick="editComment(this)">Редактировать</button>`;
+                document.getElementById('comments-list').appendChild(newComment);
+                document.getElementById('name').value = '';
+                document.getElementById('comment').value = '';
+            }
+        });
+
+        function editComment(button) {
+            let commentText = prompt("Редактируйте ваш комментарий:", button.parentElement.textContent.replace("Редактировать", "").trim());
+            if (commentText !== null) {
+                button.parentElement.firstChild.textContent = commentText + ' ';
+            }
+        }
+    </script>
+</body>
+</html>

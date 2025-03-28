@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #008080;
+    display: inline-block;
+}
+
+nav {
+    display: inline-block;
+    float: right;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+nav input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    margin-top: 20px;
+}
+
+.main-news {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.news-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.news-item img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.news-item div {
+    flex: 1;
+}
+
+.news-item .date {
+    color: gray;
+    font-size: 14px;
+}
+
+.news-item h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.news-item p {
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background: #008080;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.sidebar {
+    flex: 1;
+    background: white;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar .date {
+    font-size: 12px;
+    color: gray;
+    display: block;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    color: #008080;
+}
+
+/* 📱 Мобильная версия */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .news-item {
+        flex-direction: column;
+    }
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
